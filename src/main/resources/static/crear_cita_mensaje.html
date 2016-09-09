@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Health Plus</title>
+    
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datatables.bootstrap.min.css">
+
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Mi CSS -->
+    
+    <link rel="stylesheet" href="css/data.css">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+
+
+    <script src="js/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
+    </script>
+    <script src="js/jquery.dataTables.min.js"></script>
+
+    <script src="js/dataTables.bootstrap.min.js"></script>
+
+    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-datetimepickerdos.min.js"></script>
+
+    <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+    <script type='text/javascript' src='js/demo.js'></script>
+    
+    
+
+
+
+</head>
+
+<body class="animate-area" id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top colortope">
+        <div class="container-fluid">
+            <!-- toggle para mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll logo" href="#page-top"><img src="img/logomedical.png"></a>
+            </div>
+
+            <!-- Menu principal -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right social-network social-circle">
+                    <li>
+                        <a class="page-scroll" href="pacientes.html">Pacientes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="citas.html">Citas</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="notificaciones.html">Notificaciones</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Estadisticas</a>
+                    </li>
+                        <li><a href="login_cerrar.html" class="icoSnapchat" title="fa fa-snapchat"><i class="fa fa-sign-out"></i></a></li>
+                    </ul>				
+				</div>
+            </div>
+        </div>
+       
+    </nav>
+
+   <div class="container">
+   <div>
+     <nav class="breadcrumb">
+  <a class="breadcrumb-item" href="citas.html">Citas</a>
+  <span class="breadcrumb-item active">/Crear cita</span>
+</nav>
+<div class="alert alert-success" role="alert">Se ha creado la cita Exitosamente!</div>
+   </div>
+   <a href="pacientes.html" class="hvr-wobble-horizontal btn btn-defaul btverdatosp btmargin" role="button">Volver</a>
+   <!-- form paciente -->
+  <div class="row-fluid">
+    <h4 class=""><i class="icon-plus-sign-alt"></i>Ficha del Paciente</h4>
+    <hr class="hr-dark seplinea">
+   <div class="form-group row">
+  <label for="example-text-input" class="col-xs-2 col-form-label">Nro. de historia</label>
+  <div class="col-xs-10">
+     <input class="form-control" type="text" value="021547" name="nro_historia" id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-search-input" class="col-xs-2 col-form-label">Nombre</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="text" value="Pedro Gonzalez" name="nombre_paciente" id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-email-input" class="col-xs-2 col-form-label">Teléfono</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="tel" value="1-(555)-555-5555" name="telefono_paciente" id="example-tel-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-url-input" class="col-xs-2 col-form-label">Email</label>
+  <div class="col-xs-10">
+     <input class="form-control" type="email" value="email@example.com" name="email_paciente" id="example-email-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-password-input" class="col-xs-2 col-form-label">Fecha de nacimiento</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="datetime-local" name="f_nac_paciente" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+  </div>
+</div>
+
+<!-- form consulta -->
+  <hr class="hr-dark seplinea">
+  
+  <div class="row-fluid">
+    <h4 class=""><i class="icon-plus-sign-alt"></i>Consulta</h4>
+    <hr class="hr-dark seplinea">
+<div class="form-group row">
+  <label for="example-password-input" class="col-xs-2 col-form-label">Fecha y hora</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="datetime-local" name="fecha_hora" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+  </div>
+</div>
+</div>
+<div class="form-group row">
+  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Lugar</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="text" name="lugar" value="caracas" id="example-text-input">
+  </div>
+</div>
+
+<!-- boxedit -->
+<div class="form-group row">
+  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Sintomas</label>
+  <div class="col-xs-10">
+<div id="sample">
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+  <textarea class="" name="area2" style="width: 100%;">
+       Fiebre dolor de cabeza y malestar general.
+</textarea><br />
+</div>
+</div>
+<div class="form-group row">
+  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Diagnostico</label>
+  <div class="col-xs-10">
+<div id="sample">
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+  <textarea class="" name="area2" style="width: 100%;">
+       Dengue clasico.
+</textarea><br />
+</div>
+</div>
+<div class="form-group row">
+  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Tratamiento</label>
+  <div class="col-xs-10">
+<div id="sample">
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+  <textarea class="" name="area2" style="width: 100%;">
+       Acetaminofen,
+</textarea><br />
+</div>
+</div>
+<div class="form-group row">
+   <label for="example-password-input" class="col-xs-2 col-form-label">Proxima consulta</label>
+  <div class="col-xs-10">
+    <input class="form-control" type="datetime-local" name="p_consulta" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+  </div>
+</div>
+<a href="crear_cita_mensaje.html" class="hvr-wobble-horizontal hvr-shutter-out-horizontal btpaciente text-center" role="button"><h4>Guardar</h4></a>
+<!--<hr class="hr-dark seplinea">
+  
+  <div class="row-fluid">
+    <h4 class=""><i class="icon-plus-sign-alt"></i>Citas Asociadas</h4>
+    <hr class="hr-dark seplinea">-->
+
+    <!-- modal -->
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+      </div>
+          <div class="modal-body">
+          <div class="form-group">
+        <input class="form-control " type="text" placeholder="Mohsin">
+        </div>
+        <div class="form-group">
+        
+        <input class="form-control " type="text" placeholder="Irshad">
+        </div>
+        <div class="form-group">
+        <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+    
+        
+        </div>
+      </div>
+          <div class="modal-footer ">
+        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+      </div>
+        </div>
+    <!-- /.modal-content --> 
+  </div>
+      <!-- /.modal-dialog --> 
+    </div>
+    
+    
+    
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Eliminar Cita</h4>
+      </div>
+          <div class="modal-body">
+       
+       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Esta usted seguro de querer eliminar esta cita?</div>
+       
+      </div>
+        <div class="modal-footer ">
+        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Si</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+      </div>
+        </div>
+    <!-- /.modal-content --> 
+  </div>
+      <!-- /.modal-dialog --> 
+    </div>
+
+
+
+<!-- Footer -->
+    
+
+    <!--Modal servicios-->
+<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body"><div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>
+</div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal alert-->
+
+ <div class="modal fade" id="myModaldos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" role="alert">Se ha creado la cita satisfactoriamente!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    $('.carousel').carousel({
+        interval: 3000
+    })
+</script>
+ <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      active: false,
+      collapsible: true
+    });
+  } );
+  </script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+    <!-- datapicker -->
+      <script src="hjs/jquery-1.12.4.min.js"integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
+    <script type="text/javascript"
+     src="js/moment-with-locales.js">
+    </script> 
+    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-datetimepicker.js">
+    </script>
+<script src="/css/bootstrap-datetimepicker.css">
+    </script>
+
+   
+  <script src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+  
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Health Plus</title>
+    
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepickers.min.css">
+
+    <!-- Mi CSS -->
+    <link href="css/creative.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/set2.css" />
+
+
+    <script src="js/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/moment.min.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-datetimepickers.min.js"></script>
+
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <!--datapicker-->
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="css/bootstrap-datetimepicker.css">
+
+
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- toggle para mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll logo" href="#page-top"><img src="img/logomedical.png"></a>
+            </div>
+
+            <!-- Menu principal -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right social-network social-circle">
+                    <li>
+                        <a class="page-scroll" href="#LaEmpresa">La Empresa</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Servicios">Servicios</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contacto</a>
+                    </li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" class="icoSnapchat" title="fa fa-snapchat"><i class="fa fa-snapchat"></i></a></li>
+                    </ul>				
+				</div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+   
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <!--<ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>-->
+
+  <!-- slider -->
+  <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                     <img src="img/medicos.jpg" alt="" class="img-responsive">
+                     <div class="carousel-caption">
+                     </div>
+                </div>
+                     <div class="item">
+                     <img src="img/doctor.jpg" alt="" class="img-responsive">
+                     <div class="carousel-caption">
+                        
+                     </div>
+                </div>
+                     <div class="item">
+                     <img src="img/bebe.jpg" alt="" class="img-responsive">
+                     <div class="carousel-caption">
+                        
+                     </div>
+                </div>
+           </div>
+
+           <div class="hidden-xs copy animated pulse">
+           <h3 id="titulocopy" class="animated bounceIn">SOLICITE SU CITA AHORA!</h3>
+               
+           </div>
+           
+  <!-- Formulario --> 
+
+<div class="container col-lg-12 animated bounce" id="baseform">
+        <form>
+  <div class="form-group col-sm-6">
+    <label for="exampleInputEmail1"></label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+  </div>
+  <div class="form-group col-sm-6">
+    <label for="exampleInputPassword1"></label>
+      <select class="form-control">
+  <option>Tipo de Cita</option>
+  <option>Consulta</option>
+  <option>Cirujia</option>
+</select>
+  </div>
+<div class="form-group col-sm-6">
+    <label for="exampleInputPassword1"></label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Email">
+  </div>
+  <div class="form-group col-sm-6 marginespecialista">
+    <select class="form-control">
+  <option>Médico especialista</option>
+  <option>Cirujano</option>
+  <option>Dermatologo</option>
+  <option>Médico internista</option>
+  <option>Cardiolo</option>
+</select>
+  </div>
+  
+<div class="form-group col-sm-6">
+    <label for="exampleInputPassword1"></label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Teléfono">
+  </div>
+  
+  <div class="form-group col-sm-6 marginespecialista">
+    <div class='input-group date' id='datetimepicker'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+  </div>
+  
+  <button type="button" class="btn btn-primary btn-lg btn-block" id="botform" data-toggle="modal" data-target="#myModaldos">SOLICITAR</button>
+</form>
+</div>
+
+<!--Noticias-->
+<section class="bg-primary" id="Noticias">
+    <div class="container fondnews" id="Noticias">
+     <h2 class="section-heading text-center">Noticias</h2>
+                    <hr class="light">
+
+<div class="container row">
+  <div class="col-sm-6 col-md-4">
+    <div class="container thumbnail">
+      <img src="img/imguno.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+        <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">VER MÁS</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container row">
+  <div class="col-sm-6 col-md-4">
+    <div class="container thumbnail">
+      <img src="img/imgdos.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+        <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">VER MÁS</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container row">
+  <div class="col-sm-6 col-md-4">
+    <div class="container thumbnail">
+      <img src="img/imgtres.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+        <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">VER MÁS</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nombre de la noticia</h4>
+      </div>
+      <div class="modal-body">
+      <img src="img/imgtres.jpg" alt="..."><p></p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+ <!--La Empresa-->
+    <section class="bg-primary" id="LaEmpresa">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">La Empresa</h2>
+                    <hr class="light">
+                    <p class="text-faded">HEALTHPLUS es una empresa líder dedicada a mejorar el servicio de salud a través de la más avanzada tecnología, facilitando la interrelación de los profesionales de la salud con sus pacientes.
+HEALTHPLUS ofrece a los médicos un servicio de gestión de pacientes en línea, que le permite realizar sus citas de forma más efectiva además de incorporar nuevos canales de comunicación con sus pacientes.
+HEALTHPLUS brinda a los pacientes y público en general la opción de encontrar a su médico de confianza u otro especialista del sector y obtener una cita completamente en línea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Servicios-->
+    <section id="Servicios">
+        <div class="container margenempresa paddingservicios">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Nuestros Servicios</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    <a href="#" class="fa fa-4x fa fa-user-md text-primary sr-icons" role="button" data-toggle="collapse" data-target="" onclick="$( '.botcolap' ).click()"></a>
+                        <h3>Especialidades Médicas</h3>
+                        <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box"> <a href="#" class="fa fa-4x fa fa-medkit -md text-primary sr-icons" role="button" data-toggle="collapse" data-target="" onclick="$( '.botcolap2' ).click()"></a>
+                        <h3>Servicio de Apoyo</h3>
+                        <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    <a href="#" class="fa fa-4x fa-hospital-o text-primary sr-icons" role="button" data-toggle="collapse" data-target="" onclick="$( '.botcolap3' ).click()"></a>
+                        <h3>Clínicas y Unidades</h3>
+                        <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                     <a href="#" class="fa fa-4x fa-clock-o  text-primary sr-icons" role="button" data-toggle="collapse" data-target="" onclick="$( '.botcolap4' ).click()"></a>
+                        <h3>Horarios Médico</h3>
+                        <p class="text-muted">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--Colapse-->
+<div id="accordion">
+<h3 class="botcolap">Section 1</h3>
+  <div>
+<section id="colapse" >
+   <div class="panel-heading text-center"><strong>Especialidades Médicas</strong></div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th></th> <th>A</th> <th>C</th> <th>D</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Anestesiología</td> <td>Cardiología</td> </tr> <tr> <th ></th> <td>Cirugía Cardiovascular</td> <td>Cirugía General</td> <td>Cirugía Neuroncológica</td> </tr> <tr> <th </th> <td></td> <td>Cirugía Oncológica</td> <td>Cirugía Plástica</td> </tr> </tbody> <thead> <tr> <th></th> <th>C</th> <th>D</th> <th>E</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Dermatología</td> <td>Gastroenterología</td> </tr> <tr> <th ></th> <td>Endocrinología</td> <td>Enfermedades Infecciosas</td> <td>Genética</td> </tr> <tr> <th </th> <td>Ginecología</td> <td>ematología y Hemoterapia</td> <td>Medicina Física y de Rehabilitación</td> </tr> </tbody></table>
+</section>
+
+</div>
+
+<h3 class="botcolap2">Section 2</h3>
+  <div>
+<section id="colapse" >
+   <div class="panel-heading text-center"><strong>Servicio de Apoyo</strong></div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th></th> <th>A</th> <th>C</th> <th>D</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> <thead> <tr> <th></th> <th>C</th> <th>D</th> <th>E</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody></table>
+</section>
+</div>
+
+
+<h3 class="botcolap3">Section 3</h3>
+  <div>
+<section id="colapse" >
+   <div class="panel-heading text-center"><strong>Clínicas y Unidades</strong></div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th></th> <th>A</th> <th>C</th> <th>D</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> <thead> <tr> <th></th> <th>C</th> <th>D</th> <th>E</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody></table>
+</section>
+</div>
+
+<h3 class="botcolap4">Section 4</h3>
+  <div>
+<section id="colapse" >
+   <div class="panel-heading text-center"><strong>Horarios Médico</strong></div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th></th> <th>A</th> <th>C</th> <th>D</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> <thead> <tr> <th></th> <th>C</th> <th>D</th> <th>E</th>  </tr> </thead> <tbody> <tr> <th ></th> <td>Anatomia Patologica</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th ></th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th </th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody></table>
+</section>
+</div>
+  
+</div>
+
+
+
+
+  
+</div>
+
+<!--Contacto-->
+    <section class="contact">
+        <div class="container-fluid margenempresa paddingcontacto">
+                <div class="row-fluid" >
+                   
+                      
+                     <div class="col-md-offset-4 col-md-4 text-center" id="box">
+                      <h2 class="section-heading contacfont">Contáctenos!</h2>
+                       <hr class="light">
+                                <form class="form-horizontal" action=" " method="" id="contact_form">
+                                    <fieldset>
+                                        <!-- Form Name -->
+
+
+                                        <!-- Text input-->
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <span class="input input--fumi">
+          <input class="input__field input__field--fumi" type="text" id="input-24" />
+          <label class="input__label input__label--fumi" for="input-24">
+            <i class="fa fa-fw fa fa-user icon icon--fumi"></i>
+            <span class="input__label-content input__label-content--fumi">Nombre</span>
+          </label>
+        </span>
+                                            </div>
+                                        </div>
+
+
+                                  
+                                        <!-- Text input-->
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                              <span class="input input--fumi">
+          <input class="input__field input__field--fumi" type="text" id="input-24" />
+          <label class="input__label input__label--fumi" for="input-24">
+            <i class="fa fa-fw fa fa-envelope icon icon--fumi"></i>
+            <span class="input__label-content input__label-content--fumi">Email</span>
+          </label>
+        </span>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Text input-->
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                  <span class="input input--fumi">
+          <input class="input__field input__field--fumi" type="text" id="input-24" />
+          <label class="input__label input__label--fumi" for="input-24">
+            <i class="fa fa-fw fa fa-phone icon icon--fumi"></i>
+            <span class="input__label-content input__label-content--fumi">Teléfono</span>
+          </label>
+        </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Text input-->
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12 inputGroupContainer">
+                                                  <span class="input input--fumi coment">
+          <input class="input__field input__field--fumi" type="text" id="input-24" />
+          <label class="input__label input__label--fumi" for="input-24">
+            <i class="fa fa-fw fa fa-pencil icon icon--fumi"></i>
+            <span class="input__label-content input__label-content--fumi">Comentario</span>
+          </label>
+        </span>
+                                            </div>
+                                        </div>
+                                        <div id="p_lt_ctl00_WebPartZone5_WebPartZone5_zone_pageplaceholder_p_lt_ctl03_WebPartZone1_WebPartZone1_zone_On_lineForm_viewBiz_ncpcaptcha" class="EditingFormControlNestedControl editing-form-control-nested-control col-lg-12">
+      <div data-theme="light" data-type="image"></div><script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&amp;render=explicit" async="" defer=""></script><script>var CaptchaCallback = function(){if (document.getElementById('p_lt_ctl00_WebPartZone5_WebPartZone5_zone_pageplaceholder_p_lt_ctl03_WebPartZone1_WebPartZone1_zone_On_lineForm_viewBiz_Captcha_captcha') != null && (typeof grecaptcha!== 'undefined')) { grecaptcha.render('p_lt_ctl00_WebPartZone5_WebPartZone5_zone_pageplaceholder_p_lt_ctl03_WebPartZone1_WebPartZone1_zone_On_lineForm_viewBiz_Captcha_captcha', {'sitekey' : '6LfSPiQTAAAAANEWMnR3cQT_OwVg26uioXs0rTlj'}); }};</script><span id="p_lt_ctl00_WebPartZone5_WebPartZone5_zone_pageplaceholder_p_lt_ctl03_WebPartZone1_WebPartZone1_zone_On_lineForm_viewBiz_Captcha_captcha"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LfSPiQTAAAAANEWMnR3cQT_OwVg26uioXs0rTlj&amp;co=aHR0cDovL21jd2ViMDEuY2xvdWRhcHAubmV0OjEyMzU2&amp;hl=en&amp;v=r20160718175036&amp;size=normal&amp;cb=14b1od3t8fzb" title="recaptcha widget" width="304" height="78" role="presentation" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></span>
+
+    </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <button type="button" class="btn btn-warning pull-right" data-toggle="modal" data-target="#myModaldos" id="btnenviar">Enviar <span class="glyphicon glyphicon-send"></span></button>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+
+
+
+                                </form>
+                    </div> 
+</div>
+    </section>
+
+    <!--map-->
+    <section class="" id="">
+        <div class="container">
+            <div class="row">
+                <div class="">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7846.498966552164!2d-66.86658122353889!3d10.480988619938818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58f742aa7689%3A0xf692e56bb1ff6749!2sLas+Mercedes%2C+Caracas%2C+Miranda!5e0!3m2!1sen!2sve!4v1468773684745" width="100%" height="400" frameborder="0" style="border:0"allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">2016 © Healthplus International. All rights reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                     <ul class="list-inline quicklinks">
+                        <li><a href="#">Políticas de Privacidad</a>
+                        </li>
+                        <li><a href="#">Términos de Uso</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Modal servicios-->
+<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body"><div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+
+  <!-- Table -->
+  <table class="table"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>
+</div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal alert-->
+
+ <div class="modal fade" id="myModaldos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" role="alert">Su solicitud ha sido enviada satisfactoriamente!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    $('.carousel').carousel({
+        interval: 3000
+    })
+</script>
+ <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      active: false,
+      collapsible: true
+    });
+  } );
+  </script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+    <!-- datapicker -->
+      <script src="js/jquery-1.12.4.min.js"integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
+    <script type="text/javascript"
+     src="js/moment-with-locales.js">
+    </script> 
+    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-datetimepickerst.js">
+    </script>
+<script src="css/bootstrap-datetimepickerst.css">
+    </script>
+
+   
+  <script src="js/jquery-ui.js"></script>
+
+     <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker').datetimepicker();
+            });
+        </script>
+   <script src="js/classie.js"></script>
+    <script>
+      (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+          (function() {
+            // Make sure we trim BOM and NBSP
+            var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+            String.prototype.trim = function() {
+              return this.replace(rtrim, '');
+            };
+          })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+          // in case the input is already filled..
+          if( inputEl.value.trim() !== '' ) {
+            classie.add( inputEl.parentNode, 'input--filled' );
+          }
+
+          // events:
+          inputEl.addEventListener( 'focus', onInputFocus );
+          inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+          classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+          if( ev.target.value.trim() === '' ) {
+            classie.remove( ev.target.parentNode, 'input--filled' );
+          }
+        }
+      })();
+    </script>
+
+</body>
+
+</html>

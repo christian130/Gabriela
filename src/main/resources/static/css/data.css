@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2016 Daniel Eden
+ */
+
+@keyframes animatedBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+        @-webkit-keyframes animatedBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+        @-ms-keyframes animatedBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+        @-moz-keyframes animatedBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+
+.animate-area   { 
+    width: auto; 
+    height: 700px; 
+    background-image: url(../img/mm.png);
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+animation: animatedBackground 40s linear infinite;
+-ms-animation: animatedBackground 40s linear infinite;
+-moz-animation: animatedBackground 40s linear infinite;
+-webkit-animation: animatedBackground 40s linear infinite;
+}
+
+.sumbot{
+    float: right;
+
+}
+ .patable{
+  margin-top: 10px !important;
+ }
+/*.brad {
+ background-color: white;
+
+}*/
+
+.tdeliminar{
+    width: 10px;
+}
+
+.btverdatosp{
+    float: right;
+    background-color: #17556f ;
+    color: white ;
+    width: 114px ;
+    margin-right: 14px;
+    border-radius: 5px;
+    height: 38px;
+}
+ 
+ .tabla{
+    margin-top: 20px !important;
+ }
+
+.btmargin{
+  margin-top: -10px;
+}
+.seplinea{
+  border-top: 1px solid #bdc6ca;
+}
+
+.fondoedit{
+   background-color: white !important;
+}
+
+
+.pagina{
+    float: right;
+    margin-top: -42px;
+}
+
+.tablancho{
+    width: 62%;
+}
+ .btpaciente{
+    float: right !important;
+    background-color: #f35b09 !important;
+    color: white !important;
+    width: 155px !important;
+    margin-right: 14px;
+    border-radius: 5px;
+    height: 38px;
+ }
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+
+ @media (min-width: 1200px)
+.container {
+    width: 87% !important;
+}
+
+.newuser{
+	float: right;
+    margin: 0px 14% 0 0;
+
+}
+
+
+.btuser{
+	 font-size: 20px;
+    border-radius: 26px;
+    background-color: #b5aaaa;
+    border-color: #b5aaaa;
+}
+
+.bucador{
+    width: 373px;
+    margin: 3% 0 -4% 8%;
+
+
+}
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+   
+    margin-top: 63px;
+    }
+
+ .fondo{
+ 	background-color: white;
+ }
+
+ .margincolun{
+    margin-right: 72px !important;
+    margin-left: 8% !important;
+ }
+
+ #custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
