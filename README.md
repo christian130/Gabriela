@@ -1,4 +1,3 @@
-
 ```
 #!java
 
@@ -28,7 +27,13 @@ Using default security password: 520774a4-3ff8-4e38-abe1-ae3c9215fea9
 
 
 
-el usuario es user y la clave es la suministrada por spring security... en este caso es: 520774a4-3ff8-4e38-abe1-ae3c9215fea9
+el usuario es 
+```
+#!java
+
+user
+```
+ y la clave es la suministrada por spring security... en este caso es: 520774a4-3ff8-4e38-abe1-ae3c9215fea9
 luego de esto sigo con el avancehe configurado para que el puerto por defecto del tomcat sea el 12000
 
 
