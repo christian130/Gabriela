@@ -16,7 +16,7 @@ mvn -Dmaven.test.skip=true clean install
 mvn spring-boot:run
 ```
 
-cuando ingrese este comando el spring security esta activado y le va a aparecer una clave de seguridad algo parecido a esto
+cuando ingrese este comando el spring security esta activado y le va a aparecer una clave de seguridad algo parecido a esto, es de menester recordar que esta clave es aleatoria.
 
 
 ```
@@ -33,7 +33,7 @@ el usuario es
 
 user
 ```
- y la clave es la suministrada por spring security... en este caso es: 520774a4-3ff8-4e38-abe1-ae3c9215fea9
+ y la clave aleatoria es la suministrada por spring security en la consola al desplegar la aplicacion con spring-boot... en este caso es: 520774a4-3ff8-4e38-abe1-ae3c9215fea9 (clave aleatoria)
 luego de esto sigo con el avancehe configurado para que el puerto por defecto del tomcat sea el 12000
 
 
