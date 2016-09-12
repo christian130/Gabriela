@@ -32,6 +32,15 @@
         	<groupId>org.springframework.security.oauth</groupId>
         	<artifactId>spring-security-oauth2</artifactId>
         </dependency>
+		<dependency>
+		 <groupId>ojdbc6</groupId>
+         <artifactId>ojdbc6</artifactId>
+         <scope>system</scope>
+         <version>1.0</version>
+         <systemPath>${basedir}\src\main\resources\ojdbc6.jar</systemPath>
+  </dependency>
+		
+		
     </dependencies>
 
     <properties>
