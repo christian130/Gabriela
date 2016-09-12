@@ -1,6 +1,6 @@
 ```
 #!java
-
+IMPORTANTE: NO SE NECESITA ALGUN IDE PARA LEVANTAR LA APLICACION... BASTA CON EL JDK 8
 git clone https://christian130@bitbucket.org/christian130/conexus.git
 ```
 
