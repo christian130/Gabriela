@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class IndexController {
 	@RequestMapping("/login")
-    public String login(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+    public String login(Model model) {        
         return "login";
+    }
+	@RequestMapping("/pacientes")
+    public String pacientes(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {        
+        return "pacientes";
     }
 
 }
