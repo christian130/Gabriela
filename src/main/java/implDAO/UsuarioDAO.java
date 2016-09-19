@@ -8,8 +8,8 @@ import conexusDTO.UsuarioDTO;
 public class UsuarioDAO implements IUsuarioDAO{
 	@Autowired
 	private ApplicationContext appContext;
-	@Autowired
-	private dataSource d;
+	//@Autowired
+	//private dataSource d;
 	@Override
 	public boolean save(UsuarioDTO objUsuarioDTO) {
 		// TODO Auto-generated method stub
