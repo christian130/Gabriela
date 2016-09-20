@@ -11,24 +11,47 @@ import javax.swing.table.DefaultTableModel;
 
 public class CitasMedicasImplDAO {
    static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";  
-   static final String DB_URL = "jdbc:mysql://localhost/brasilia_diario";
+   static final String DB_URL = "jdbc:oracle:thin:@//192.168.56.101:1521/SERVICENAMEjdbc:mysql://localhost/brasilia_diario";
    static final String USER = "root";
    static final String PASS = "";
    Connection conn = null;
    public CitasMedicasImplDAO() {   
-   try{
-      Class.forName("com.mysql.jdbc.Driver");
+   /*try{
+      Class.forName("oracle.jdbc.driver.OracleDriver");
       //System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
    }catch(SQLException se){
       se.printStackTrace();
    }catch(Exception e){
       e.printStackTrace();
-   }
+   }*/
    
 }
   public boolean getLogin(String usuario, String clave){
-	  Statement stmt = null;
+	  
+	  try {
+		  
+          String dbURL = "jdbc:oracle:thin:@192.168.56.101:1521:deasrrollo";
+          String strUserID = "CITAS_MEDICAS";
+          String strPassword = "123456";
+          Connection myConnection=DriverManager.getConnection(dbURL,strUserID,strPassword);
+
+          Statement sqlStatement = myConnection.createStatement();
+          String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0";  
+          ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
+          while (myResultSet.next()) {
+              return true;
+          }
+          myResultSet.close();
+          myConnection.close();
+          
+      } catch (Exception e) {
+          System.out.println(e);
+          return false;
+      }
+	
+	  return false;
+	  /*Statement stmt = null;
 	  try {
 		stmt = conn.createStatement();
 	} catch (SQLException e) {
@@ -55,6 +78,7 @@ public class CitasMedicasImplDAO {
 		return false;
 	}
 	return false;
+	 */ 
 	  
   }
    public void close(){
