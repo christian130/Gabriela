@@ -30,7 +30,7 @@ public class CitasMedicasImplDAO {
    }*/
    
 }
-  public boolean getLogin(UsuarioDTO objUsuarioDTO){
+  public boolean getLogin(UsuarioDTO objUsuarioDTO) throws Exception {
 	  
 	  try {
 		  
@@ -40,7 +40,8 @@ public class CitasMedicasImplDAO {
           Connection myConnection=DriverManager.getConnection(dbURL,strUserID,strPassword);
 
           Statement sqlStatement = myConnection.createStatement();
-          String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0 and LOGIN like '%"+objUsuarioDTO.getLogin()+"%' and CLAVE like '%"+objUsuarioDTO.getPasssha256()+"%'";  
+          String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0";
+          //String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0 and LOGIN like '%"+objUsuarioDTO.getLogin()+"%' and CLAVE like '%"+objUsuarioDTO.getPasssha256()+"%'";  
           ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
           while (myResultSet.next()) {
               return true;

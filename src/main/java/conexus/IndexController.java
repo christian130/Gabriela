@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import conexusDTO.UsuarioDTO;
 import implDAO.CitasMedicasImplDAO;
+import implDAO.UsuarioDAO;
 @Controller
 public class IndexController {
 	@RequestMapping("/")
@@ -34,13 +35,14 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 	}*/
 	@RequestMapping("/pacientes")
     public String pacientes(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
-		CitasMedicasImplDAO getConnection = new CitasMedicasImplDAO();
+		
 		System.out.println("I recevied the next values: "+name + pass);
 		
 		UsuarioDTO objUsuarioDTO = new UsuarioDTO();
 		objUsuarioDTO.setLogin(name.toString());
 		objUsuarioDTO.setPasssha256(pass.toString());
-		if (getConnection.getLogin(objUsuarioDTO)){
+		UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+		if (objUsuarioDAO.findByIdUser(objUsuarioDTO)){
 			return "pacientes";
 		}else{
 			return "login";
