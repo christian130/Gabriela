@@ -26,7 +26,8 @@ public String getLogin() {
 }
 
 public void setLogin(String login) {
-	this.login = login;
+	
+	this.login = login.toLowerCase();
 }
 
 public String getPasssha256() {
@@ -34,7 +35,7 @@ public String getPasssha256() {
 }
 
 public void setPasssha256(String passsha256) {
-	this.passsha256 = passsha256;
+	this.passsha256 = passsha256.toLowerCase();
 }
 
 public int getStatus() {

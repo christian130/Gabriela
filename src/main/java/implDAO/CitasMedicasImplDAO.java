@@ -9,6 +9,8 @@ import java.sql.Statement;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import conexusDTO.UsuarioDTO;
+
 public class CitasMedicasImplDAO {
    static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";  
    static final String DB_URL = "jdbc:oracle:thin:@//192.168.56.101:1521/SERVICENAMEjdbc:mysql://localhost/brasilia_diario";
@@ -27,7 +29,7 @@ public class CitasMedicasImplDAO {
    }*/
    
 }
-  public boolean getLogin(String usuario, String clave){
+  public boolean getLogin(UsuarioDTO objUsuarioDTO){
 	  
 	  try {
 		  
@@ -37,7 +39,7 @@ public class CitasMedicasImplDAO {
           Connection myConnection=DriverManager.getConnection(dbURL,strUserID,strPassword);
 
           Statement sqlStatement = myConnection.createStatement();
-          String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0";  
+          String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0 and LOGIN like '%"+objUsuarioDTO.getLogin()+"%' and CLAVE like '%"+objUsuarioDTO.getPasssha256()+"%'";  
           ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
           while (myResultSet.next()) {
               return true;
