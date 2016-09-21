@@ -36,7 +36,7 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 	@RequestMapping("/pacientes")
     public String pacientes(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
 		
-		System.out.println("I recevied the next values: "+name + pass);
+		System.out.println("'I' received the next values: "+name + pass);
 		
 		UsuarioDTO objUsuarioDTO = new UsuarioDTO();
 		objUsuarioDTO.setLogin(name.toString());
@@ -47,6 +47,5 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 		}else{
 			return "login";
 		}
-        //return "pacientes";
     }
 }
