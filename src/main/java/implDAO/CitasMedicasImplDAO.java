@@ -16,6 +16,7 @@ public class CitasMedicasImplDAO {
    static final String DB_URL = "jdbc:oracle:thin:@//192.168.56.101:1521/SERVICENAMEjdbc:mysql://localhost/brasilia_diario";
    static final String USER = "root";
    static final String PASS = "";
+   
    Connection conn = null;
    public CitasMedicasImplDAO() {   
    /*try{
