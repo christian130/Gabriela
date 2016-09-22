@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webflow-project-description>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.1.201510041102-RELEASE]]></pluginVersion>
+	<configs>
+		<config>
+			<file>src/main/java/conexus/flow.xml</file>
+			<name><![CDATA[flow]]></name>
+			<beans-config><![CDATA[1:BeansModel|2:CONEXUS|3:java:conexus.Application]]></beans-config>
+		</config>
+	</configs>
+</webflow-project-description>
