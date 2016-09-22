@@ -9,9 +9,13 @@ import java.sql.Statement;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import conexusDTO.UsuarioDTO;
 
-public class CitasMedicasImplDAO {
+public class CitasMedicasImplDAO implements ApplicationContextAware  {
    static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";  
    static final String DB_URL = "jdbc:oracle:thin:@//192.168.56.101:1521/SERVICENAMEjdbc:mysql://localhost/brasilia_diario";
    static final String USER = "root";
@@ -128,4 +132,11 @@ public class CitasMedicasImplDAO {
        {
        }
    }
+   private ApplicationContext applicationContext;
+@Override
+public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+	this.applicationContext = applicationContext;
+	// TODO Auto-generated method stub
+	
+}
 }
