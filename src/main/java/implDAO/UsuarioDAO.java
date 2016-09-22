@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import conexusDTO.UsuarioDTO;
+import iDAO.IUsuarioDAO;
 
 public class UsuarioDAO implements IUsuarioDAO{
 	@Autowired
