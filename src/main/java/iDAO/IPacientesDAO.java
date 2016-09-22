@@ -1,7 +1,6 @@
 package iDAO;
 
 import conexusDTO.PacientesDTO;
-import conexusDTO.UsuarioDTO;
 
 public interface IPacientesDAO {
 	public boolean save(PacientesDTO pacientesObjDTO);

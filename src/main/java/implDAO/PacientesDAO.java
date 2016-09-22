@@ -1,9 +1,7 @@
 package implDAO;
 
 import conexusDTO.PacientesDTO;
-import conexusDTO.UsuarioDTO;
 import iDAO.IPacientesDAO;
-import scala.annotation.meta.setter;
 
 public class PacientesDAO implements IPacientesDAO {
 
