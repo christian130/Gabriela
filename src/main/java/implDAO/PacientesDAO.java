@@ -9,8 +9,7 @@ public class PacientesDAO implements IPacientesDAO {
 
 	@Override
 	public boolean save(PacientesDTO pacientesObjDTO) {
-		PacientesDTO pacientes= new PacientesDTO();
-		
+		//PacientesDTO pacientes= new PacientesDTO();
 		// TODO Auto-generated method stub
 		return false;
 	}
