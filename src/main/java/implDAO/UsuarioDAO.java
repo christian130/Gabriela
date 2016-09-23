@@ -7,10 +7,10 @@ import conexusDTO.UsuarioDTO;
 import iDAO.IUsuarioDAO;
 
 public class UsuarioDAO implements IUsuarioDAO{
-	@Autowired
-	private ApplicationContext appContext;
-	//@Autowired
-	//private dataSource d;
+	
+	@Autowired	
+	AppConfig configuracionInicial;
+	
 	@Override
 	public boolean save(UsuarioDTO objUsuarioDTO) {
 		// TODO Auto-generated method stub
@@ -25,9 +25,9 @@ public class UsuarioDAO implements IUsuarioDAO{
 
 	@Override
 	public boolean findByIdUser(UsuarioDTO objUsuarioDTO) {
-		CitasMedicasImplDAO getConnection = new CitasMedicasImplDAO();
-		try {
-			if (getConnection.getLogin(objUsuarioDTO)){
+		
+				try {
+			if (configuracionInicial.getLogin(objUsuarioDTO)){
 				return true;
 			}else{
 				return false;

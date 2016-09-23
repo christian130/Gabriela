@@ -1,31 +1,27 @@
 package implDAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import conexusDTO.UsuarioDTO;
 import oracle.jdbc.pool.OracleDataSource;
-
-public class CitasMedicasImplDAO  {
+@Configuration
+public class AppConfig  {
 
    
 	private Connection myConnection = null;
 	private ApplicationContext context;
-   public CitasMedicasImplDAO() {   
+   public AppConfig() {   
  
    
 }
+   @Bean
   public boolean getLogin(UsuarioDTO objUsuarioDTO) throws Exception {
 	  
 	  try {

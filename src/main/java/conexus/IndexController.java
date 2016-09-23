@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import conexusDTO.UsuarioDTO;
-import implDAO.CitasMedicasImplDAO;
+import implDAO.AppConfig;
 import implDAO.UsuarioDAO;
 @Controller
 public class IndexController {
