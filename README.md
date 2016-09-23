@@ -21,7 +21,6 @@ mvn spring-boot:run
 ir a la siguiente direccion e ingresar el usuario y contraseña suministrados aqui (esto es obra de spring security)
 ```
 #!java
-
 localhost:12000
 ```
 
