@@ -47,7 +47,7 @@ public class AppConfig  {
 	
 	  
   }
-@Bean
+@Bean(name = "myDependencyInyection")
 public Connection getMyConnection() throws Exception {
 	 ApplicationContext context = new GenericXmlApplicationContext("application-context.xml");
      OracleDataSource dataSource=  (OracleDataSource) context.getBean("dataSource");
