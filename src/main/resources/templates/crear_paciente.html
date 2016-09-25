@@ -51,6 +51,7 @@
   <script src="js/jquery-1.9.1.js"></script> 
   <script src="external/jquery-ui/datepicker.js"></script> 
   <script src="js/jquery.mobile.datepicker.js"></script>
+  <script src="js/validator.js"></script>
   <script>
     $(function(){
       $( ".date-input-css" ).datepicker();
@@ -108,40 +109,62 @@
   <div class="row-fluid">
     <h4 class=""><i class="icon-plus-sign-alt"></i>Ficha del Paciente</h4>
     <hr class="hr-dark seplinea">
+    <form role="form" data-toggle="validator" id="myForm" method="post" action="guardarPaciente">
    <div class="form-group row">
+   
   <label for="example-text-input" class="col-xs-2 col-form-label">Nro. de historia</label>
   <div class="col-xs-10">
-     <input class="form-control" type="text" value="021547" name="nro_historia" id="example-text-input">
+     <input class="form-control" type="text"  name="nro_historia" id="example-text-input" required>
+     <div class="help-block with-errors"></div>
   </div>
 </div>
+
 <div class="form-group row">
+
   <label for="example-search-input" class="col-xs-2 col-form-label">Nombre</label>
   <div class="col-xs-10">
-    <input class="form-control" type="text" value="Pedro Gonzalez" name="nombre_paciente" id="example-text-input">
+    <input class="form-control" type="text"  name="nombre_paciente" id="example-text-input" required>
+    <div class="help-block with-errors"></div>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-email-input" class="col-xs-2 col-form-label">Teléfono</label>
   <div class="col-xs-10">
-    <input class="form-control" type="tel" value="1-(555)-555-5555" name="telefono_paciente" id="example-tel-input">
+    <input class="form-control" type="number" name="telefono_paciente" id="example-tel-input" required>
+    <div class="help-block with-errors"></div>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-url-input" class="col-xs-2 col-form-label">Email</label>
   <div class="col-xs-10">
-     <input class="form-control" type="email" value="email@example.com" name="email_paciente" id="example-email-input">
+     <input class="form-control" type="email"  name="email_paciente" id="example-email-input" required>
+     <div class="help-block with-errors"></div>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-password-input" class="col-xs-2 col-form-label">Fecha de nacimiento</label>
   <div class="col-xs-10">
-    <input type="text" class="date-input-css form-control" value="08/24/2016" name="Fecha_nacimiento" >
+    <input type="text" class="date-input-css form-control" name="Fecha_nacimiento" required>
+    <div class="help-block with-errors"></div>
   </div>
 </div>
-
+<div class="form-group" style="display:none">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="terms" data-error="Before you wreck yourself" required checked>
+        Check yourself
+      </label>
+      <div class="help-block with-errors"></div>
+    </div>
+  </div>
+  <div class="form-group">
+  <a href="#" class="hvr-wobble-horizontal hvr-shutter-out-horizontal btpaciente text-center" role="button" id="guardarBtn"><h4>Guardar</h4></a>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button>-->
+  </div>
+</form>
 <!-- consulta -->
  
-<a href="crear_paciente_mensaje.html" class="hvr-wobble-horizontal hvr-shutter-out-horizontal btpaciente text-center" role="button"><h4>Guardar</h4></a>
+
 
 
 <!--<hr class="hr-dark seplinea">
@@ -267,6 +290,24 @@
       collapsible: true
     });
   } );
+  $(document).ready(function(){
+  $("#guardarBtn").bind("click",function(){
+  $("#myForm").submit();
+  });
+
+  });
+  function validatePhone(field, alerttext) {
+    if (field.match( /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/)) {
+         return true;
+    } 
+    //alert(alerttext);
+    return false;
+}
+  function validarCampos(){
+ 
+  $("#myForm").validator();
+  //return true;
+  }
   </script>
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>

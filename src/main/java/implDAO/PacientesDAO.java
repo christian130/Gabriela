@@ -1,7 +1,5 @@
 package implDAO;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import conexusDTO.PacientesDTO;
 import iDAO.IPacientesDAO;
 

@@ -1,16 +1,18 @@
 package conexus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import conexusDTO.UsuarioDTO;
-import implDAO.AppConfig;
 import implDAO.UsuarioDAO;
 @Controller
 public class IndexController {
-	@Autowired
-	AppConfig getMyConnection;
+	
 	
 	@RequestMapping("/")
     public String login(Model model) {
@@ -21,7 +23,28 @@ public class IndexController {
     public String citas(Model model) {        
         return "citas";
     }
+	@RequestMapping("/crear_paciente")
+    public String irAPaciente(Model model) {
 		
+        return "crear_paciente";
+    }	
+	/*@RequestMapping("/crear_paciente_mensaje")
+    public String mostrarPaciente(Model model) {
+		System.out.println("now 'I' will create a registry in the DB, note: i'm in the IndexController");
+		
+        return "crear_paciente_mensaje";
+    }*/
+	
+	@RequestMapping (value="/guardarPaciente", method=RequestMethod.POST, 
+    produces="application/json", consumes="application/json",params={"nro_historia", "nombre_paciente","telefono_paciente","email_paciente","Fecha_nacimiento"})
+    public String crearPaciente(@PathVariable("nro_historia") String id, @RequestParam(value="username", required=false, defaultValue="user") 
+    String username, @RequestParam(value="password", required=false, defaultValue="password") String password, 
+    @ModelAttribute("submitModel") Model model, BindingResult errors) {
+		System.out.println("now 'I' will create a registry in the DB, note: i'm in the IndexController");
+		
+        return "crear_paciente_mensaje";
+    }	
+	
 	/*@RequestMapping (value="/pacientes", method=RequestMethod.GET, 
             produces="text/xml", params={"name", "password"})
 public String handleLogin(@PathVariable("id") String id, @RequestParam(value="username", required=false, defaultValue="user") 
