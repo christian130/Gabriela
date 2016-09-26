@@ -67,7 +67,7 @@
         </span>
          <form class="login-form">
      <span class="input input--nao">
-          <input class="input__field input__field--nao" type="text" id="input-1" />
+          <input class="input__field input__field--nao" type="text" id="input-2" />
           <label class="input__label input__label--nao" for="input-1">
             <span class="input__label-content input__label-content--nao">Clave</span>
           </label>
@@ -75,12 +75,14 @@
             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
           </svg>
         </span>
-      <a class="btn btn-info" href="pacientes.html" role="button">Entrar</a>
+      <a class="btn btn-info" href="#" role="button" id="button001">Entrar</a>
       <p class="message"><a href="restablecer_contrasena.html">Olvido su contraseña?</a></p>
     </form>
   </div>
 </div>
+<script>
 
+</script>
 <!-- Footer -->
     
 
@@ -140,6 +142,21 @@
       collapsible: true
     });
   } );
+  jQuery(document).ready(function(){
+$("#button001").bind("click",function(){
+logmein();
+})
+
+
+});
+
+function logmein(){
+if ($("#input-1").val()=='admin' && $("#input-2").val()=='12345'){
+document.location.href="pacientes.html"
+}else{
+document.location.href="login.html"
+}
+}
   </script>
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>

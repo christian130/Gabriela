@@ -11,7 +11,7 @@ public class PacientesDTO {
 	private String nombreP;
 	private String telefonoP;
 	private String emailP;
-	private Date fechaNacimientoP;	
+	private String fechaNacimientoP;	
 	
 	//NRO_HISTORIA	VARCHAR2(30 BYTE)
 	//NOMBRE	VARCHAR2(100 BYTE)

@@ -1,20 +1,19 @@
 package conexus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import conexusDTO.PacientesDTO;
 import conexusDTO.UsuarioDTO;
+import implDAO.PacientesDAO;
 import implDAO.UsuarioDAO;
 @Controller
 public class IndexController {
 	
 	
-	@RequestMapping("/")
+	@RequestMapping(value={"/","login"})
     public String login(Model model) {
 		
         return "login";
@@ -23,11 +22,12 @@ public class IndexController {
     public String citas(Model model) {        
         return "citas";
     }
-	@RequestMapping("/crear_paciente")
+	@RequestMapping(value={"/crear_paciente","/crear_paciente_mensaje"})
     public String irAPaciente(Model model) {
 		
         return "crear_paciente";
-    }	
+    }
+		
 	/*@RequestMapping("/crear_paciente_mensaje")
     public String mostrarPaciente(Model model) {
 		System.out.println("now 'I' will create a registry in the DB, note: i'm in the IndexController");
@@ -36,13 +36,32 @@ public class IndexController {
     }*/
 	
 	@RequestMapping (value="/guardarPaciente", method=RequestMethod.POST, 
-    produces="application/json", consumes="application/json",params={"nro_historia", "nombre_paciente","telefono_paciente","email_paciente","Fecha_nacimiento"})
-    public String crearPaciente(@PathVariable("nro_historia") String id, @RequestParam(value="username", required=false, defaultValue="user") 
-    String username, @RequestParam(value="password", required=false, defaultValue="password") String password, 
-    @ModelAttribute("submitModel") Model model, BindingResult errors) {
-		System.out.println("now 'I' will create a registry in the DB, note: i'm in the IndexController");
+    produces="application/json", consumes="application/x-www-form-urlencoded",params={"nro_historia", "nombre_paciente","telefono_paciente","email_paciente","Fecha_nacimiento"})
+    public String crearPaciente(@RequestParam(value="nro_historia", required=false, defaultValue="N/A") 
+    String nroHistoriaP, @RequestParam(value="nombre_paciente", required=false, defaultValue="N/A") String nombrePaciente,
+    @RequestParam(value="telefono_paciente", required=false, defaultValue="N/A") String telefonoP,
+    @RequestParam(value="email_paciente", required=false, defaultValue="N/A") String emailP,
+    @RequestParam(value="Fecha_nacimiento", required=false, defaultValue="N/A") String fechaNacimientoP,
+    Model model) {
 		
-        return "crear_paciente_mensaje";
+//System.out.println(convertido);
+		System.out.println(nroHistoriaP+nombrePaciente+telefonoP+emailP+fechaNacimientoP);
+		PacientesDTO pacientes = new PacientesDTO();
+		pacientes.setNroHistoriaP(nroHistoriaP);
+		pacientes.setEmailP(emailP);
+		pacientes.setTelefonoP(telefonoP);
+		pacientes.setNombreP(nombrePaciente);
+		pacientes.setFechaNacimientoP(fechaNacimientoP);
+		PacientesDAO mypacienteDAO = new PacientesDAO();
+		if (mypacienteDAO.save(pacientes)){
+			return "crear_paciente_mensaje";	
+		}else{
+			return "crear_paciente";
+			
+		}
+		
+		//return "crear_paciente";
+        
     }	
 	
 	/*@RequestMapping (value="/pacientes", method=RequestMethod.GET, 
