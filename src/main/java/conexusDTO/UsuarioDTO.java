@@ -1,5 +1,8 @@
 package conexusDTO;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UsuarioDTO {
 private int id;
 private int id_perfil;

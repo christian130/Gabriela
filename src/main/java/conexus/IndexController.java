@@ -1,4 +1,5 @@
 package conexus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +12,8 @@ import implDAO.PacientesDAO;
 import implDAO.UsuarioDAO;
 @Controller
 public class IndexController {
-	
-	
+	@Autowired
+	PacientesDTO pacientes;
 	@RequestMapping(value={"/","login"})
     public String login(Model model) {
 		
@@ -46,7 +47,7 @@ public class IndexController {
 		
 //System.out.println(convertido);
 		System.out.println(nroHistoriaP+nombrePaciente+telefonoP+emailP+fechaNacimientoP);
-		PacientesDTO pacientes = new PacientesDTO();
+		//PacientesDTO pacientes = new PacientesDTO();
 		pacientes.setNroHistoriaP(nroHistoriaP);
 		pacientes.setEmailP(emailP);
 		pacientes.setTelefonoP(telefonoP);

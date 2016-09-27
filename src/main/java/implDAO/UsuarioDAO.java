@@ -7,7 +7,8 @@ import conexusDTO.UsuarioDTO;
 import iDAO.IUsuarioDAO;
 @Component
 public class UsuarioDAO implements IUsuarioDAO{
-	
+	@Autowired
+	AppConfig configuracionInicial;
 		
 	@Override
 	public boolean save(UsuarioDTO objUsuarioDTO) {
@@ -26,7 +27,7 @@ public class UsuarioDAO implements IUsuarioDAO{
 		
 				try {
 					
-					AppConfig configuracionInicial = new AppConfig();
+					
 			if (configuracionInicial.getLogin(objUsuarioDTO)){
 				System.out.println("caigo aqui");
 				return true;
