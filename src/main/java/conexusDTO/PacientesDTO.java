@@ -1,5 +1,9 @@
 package conexusDTO;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -110,17 +114,34 @@ public class PacientesDTO {
 		this.fechaNacimientoP = fechaNacimientoP;
 	}
 	
+	public int getEdad() {
+		return Edad;
+	}
+	public void setEdad(String edad) {
+		System.out.println(calculateAge(edad));
+		this.Edad = calculateAge(edad);
+	}
+
 	private int idP;
 	private String nroHistoriaP;
 	private String nombreP;
 	private String telefonoP;
 	private String emailP;
 	private String fechaNacimientoP;	
-	
+	private int Edad;
 	//NRO_HISTORIA	VARCHAR2(30 BYTE)
 	//NOMBRE	VARCHAR2(100 BYTE)
 	//TELEFONO	VARCHAR2(50 BYTE)
 	//EMAIL	VARCHAR2(20 BYTE)
 	//FECHA_NACIMIENTO	DATE
 	//ESTATUS	NUMBER
+	public int calculateAge(String fechaBirhdayP){
+		String[] split = fechaBirhdayP.split("-");
+		String dia=split[2].substring(0, 2);
+		LocalDate today = LocalDate.of(new Integer(split[0]).intValue(), new Integer(split[1]).intValue(), new Integer(dia).intValue());
+		LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);
+		LocalDate now= LocalDate.now();
+		Period p = Period.between(now, today);
+		return  Math.abs(p.getYears());
+	}
 }

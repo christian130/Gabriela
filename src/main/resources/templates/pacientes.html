@@ -179,10 +179,22 @@
                 <th>Eliminar</th>
             </tr>
         </tfoot>
-        <tbody>
-         <tr th:each="message : ${messages}">
-        <td th:text="${message.nombreP}">1</td>
+        <tbody><!-- private int idP;
+	private String nroHistoriaP;
+	private String nombreP;
+	private String telefonoP;
+	private String emailP;
+	private String fechaNacimientoP; -->
         
+        
+        <tr th:each="message : ${messages}">
+                <td th:text="${message.nroHistoriaP}"></td>
+                <td th:text="${message.nombreP}"></td>
+                <td th:text="${message.emailP}"></td>
+                <td th:text="${message.Edad}"></td>
+                <td class="tdeliminar"><a href="detalle_paciente.html" class="btn btn-primary btn-xs" role="button"><span class="glyphicon glyphicon-search"></span></a></td></td>
+                <td class="tdeliminar text-center"><p data-placement="top" data-toggle="tooltip" title=""><button class="btn btn-danger btn-xs" data-title="" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+            </tr>
     </tr>
             <tr>
                 <td>0215488</td>

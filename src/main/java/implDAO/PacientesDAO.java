@@ -78,6 +78,7 @@ public class PacientesDAO implements IPacientesDAO {
 	        	  nuevoObjeto.setTelefonoP(myResultSet.getString("TELEFONO"));
 	        	  nuevoObjeto.setEmailP(myResultSet.getString("EMAIL"));
 	        	  nuevoObjeto.setFechaNacimientoP(myResultSet.getString("FECHA_NACIMIENTO"));
+	        	  nuevoObjeto.setEdad(myResultSet.getString("FECHA_NACIMIENTO"));
 	        	  listPacientes.add(nuevoObjeto);
 	        	  //System.out.println(pacientesObjDTO.getNombreP());
 	              
