@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -89,12 +88,21 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
+        <!-- <table>
+         <tr th:each="message : ${messages}">
+        <td th:text="${message.nombreP}">1</td>
+        
+    </tr></table>-->
     </nav>
 
    <div class="container">
    <div>
      <nav class="breadcrumb">
   <span class="breadcrumb-item active">Pacientes</span>
+   
+
+  
+  
 </nav>
    </div>
    <a href="crear_paciente.html" class="hvr-wobble-horizontal hvr-shutter-out-horizontal btpaciente text-center" role="button"><h4>Crear Paciente</h4></a>
@@ -172,6 +180,10 @@
             </tr>
         </tfoot>
         <tbody>
+         <tr th:each="message : ${messages}">
+        <td th:text="${message.nombreP}">1</td>
+        
+    </tr>
             <tr>
                 <td>0215488</td>
                 <td>Pedro Oliveros</td>

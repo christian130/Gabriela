@@ -1,7 +1,10 @@
 package implDAO;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -48,17 +51,53 @@ public class PacientesDAO implements IPacientesDAO {
 		return false;
 	}
 
-	@Override
-	public boolean findByIdUser(PacientesDTO pacientesObjDTO) {
-		
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public boolean delete(PacientesDTO pacientesObjDTO) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<PacientesDTO> findByIdUser() {
+		
+		List<PacientesDTO> listPacientes = new ArrayList<PacientesDTO>();
+		//ArrayList listPacientes = new ArrayList();
+		
+		 try {
+	          Statement sqlStatement = appconfig.getMyConnection().createStatement();
+	          String readRecordSQL = "select ID_PACIENTE_Z24,NRO_HISTORIA,NOMBRE,TELEFONO,EMAIL,FECHA_NACIMIENTO,ESTATUS from PACIENTE_Z24 where ESTATUS=1";
+	          //String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0 and LOGIN like '%"+objUsuarioDTO.getLogin()+"%' and CLAVE like '%"+objUsuarioDTO.getPasssha256()+"%'";  
+	          ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
+	          
+	          while (myResultSet.next()) {
+	        	  PacientesDTO nuevoObjeto  = new PacientesDTO();
+	        	  nuevoObjeto.setNroHistoriaP(myResultSet.getString("NRO_HISTORIA"));	        	  
+	        	  nuevoObjeto.setNombreP(myResultSet.getString("NOMBRE"));	        	  
+	        	  nuevoObjeto.setTelefonoP(myResultSet.getString("TELEFONO"));
+	        	  nuevoObjeto.setEmailP(myResultSet.getString("EMAIL"));
+	        	  nuevoObjeto.setFechaNacimientoP(myResultSet.getString("FECHA_NACIMIENTO"));
+	        	  listPacientes.add(nuevoObjeto);
+	        	  //System.out.println(pacientesObjDTO.getNombreP());
+	              
+	              
+	            		  //myResultSet.getString("ID_PACIENTE_Z24"));
+	          }	          
+//	          for(PacientesDTO model : listPacientes) {
+//	              System.out.println(model.getNombreP());
+//	          }
+	          
+	          myResultSet.close();
+	          appconfig.getMyConnection().close();
+	          return listPacientes;
+	          
+	      } catch (Exception e) {
+	          System.out.println(e);
+	          return null;
+	      }
+		
+		  
 	}
 
 

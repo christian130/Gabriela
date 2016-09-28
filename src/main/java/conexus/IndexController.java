@@ -1,4 +1,6 @@
 package conexus;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -98,6 +100,9 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 		objUsuarioDTO.setLogin(name.toString());
 		objUsuarioDTO.setPasssha256(pass.toString());
 		//UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+		List<PacientesDTO> ListOfDTO = mypacienteDAO.findByIdUser();
+		model.addAttribute("messages",ListOfDTO); 
+		//model.addAttribute(attributeValue);
 		if (objUsuarioDAO.findByIdUser(objUsuarioDTO)){
 			return "pacientes";
 		}else{
