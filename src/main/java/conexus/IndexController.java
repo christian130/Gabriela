@@ -1,5 +1,6 @@
 package conexus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +12,17 @@ import conexusDTO.UsuarioDTO;
 import implDAO.PacientesDAO;
 import implDAO.UsuarioDAO;
 @Controller
-
+@ComponentScan({"conexusDTO","implDAO"})
 public class IndexController {
 	
-	
-	
-	
+	@Autowired
+	PacientesDTO pacientes = null;
+	@Autowired
+	PacientesDAO mypacienteDAO=null;
+	@Autowired
+	UsuarioDTO objUsuarioDTO=null;
+	@Autowired
+	UsuarioDAO objUsuarioDAO=null;
 	@RequestMapping(value={"/","login"})
     public String login(Model model) {
 		
@@ -50,13 +56,13 @@ public class IndexController {
 		
 //System.out.println(convertido);
 		System.out.println(nroHistoriaP+nombrePaciente+telefonoP+emailP+fechaNacimientoP);
-		PacientesDTO pacientes = new PacientesDTO();
+		//PacientesDTO pacientes = new PacientesDTO();
 		pacientes.setNroHistoriaP(nroHistoriaP);
 		pacientes.setEmailP(emailP);
 		pacientes.setTelefonoP(telefonoP);
 		pacientes.setNombreP(nombrePaciente);
 		pacientes.setFechaNacimientoP(fechaNacimientoP);
-		PacientesDAO mypacienteDAO = new PacientesDAO();
+		//PacientesDAO mypacienteDAO = new PacientesDAO();
 		if (mypacienteDAO.save(pacientes)){
 			return "crear_paciente_mensaje";	
 		}else{
@@ -88,10 +94,10 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 		
 		System.out.println("'I' received the next values: "+name + pass);
 		
-		UsuarioDTO objUsuarioDTO = new UsuarioDTO();
+//		UsuarioDTO objUsuarioDTO = new UsuarioDTO();
 		objUsuarioDTO.setLogin(name.toString());
 		objUsuarioDTO.setPasssha256(pass.toString());
-		UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+		//UsuarioDAO objUsuarioDAO = new UsuarioDAO();
 		if (objUsuarioDAO.findByIdUser(objUsuarioDTO)){
 			return "pacientes";
 		}else{

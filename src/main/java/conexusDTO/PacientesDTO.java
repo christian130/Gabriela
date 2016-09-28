@@ -2,6 +2,7 @@ package conexusDTO;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class PacientesDTO {
@@ -9,6 +10,7 @@ public class PacientesDTO {
 		super();
 	}
 	 @Bean
+	 @Primary
 	    public PacientesDTO miBean() {
 	        return new PacientesDTO();
 	    }
@@ -62,51 +64,48 @@ public class PacientesDTO {
 			return false;
 		return true;
 	}
-	@Bean
+	
 	public int getIdP() {
 		return idP;
 	}
-	@Bean
-	public void setIdP(int idP) {
-		this.idP = idP;
-	}
-	@Bean
+	
+	
 	public String getNroHistoriaP() {
 		return nroHistoriaP;
 	}
-	@Bean
+	
 	public void setNroHistoriaP(String nroHistoriaP) {
 		this.nroHistoriaP = nroHistoriaP;
 	}
-	@Bean
+	
 	public String getNombreP() {
 		return nombreP;
 	}
-	@Bean
+	
 	public void setNombreP(String nombreP) {
 		this.nombreP = nombreP;
 	}
-	@Bean
+	
 	public String getTelefonoP() {
 		return telefonoP;
 	}
-	@Bean
+	
 	public void setTelefonoP(String telefonoP) {
 		this.telefonoP = telefonoP;
 	}
-	@Bean
+	
 	public String getEmailP() {
 		return emailP;
 	}
-	@Bean
+	
 	public void setEmailP(String emailP) {
 		this.emailP = emailP;
 	}
-	@Bean
+	
 	public String getFechaNacimientoP() {
 		return fechaNacimientoP;
 	}
-	@Bean
+	
 	public void setFechaNacimientoP(String fechaNacimientoP) {
 		this.fechaNacimientoP = fechaNacimientoP;
 	}

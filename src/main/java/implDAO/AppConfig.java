@@ -6,15 +6,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.stereotype.Component;
 
 import conexusDTO.UsuarioDTO;
 import oracle.jdbc.pool.OracleDataSource;
 
 
-@Component
+@Configuration
 public class AppConfig  {
 
    
@@ -25,11 +24,11 @@ public class AppConfig  {
    
 }
    
-   @Bean
+   
   public boolean getLogin(UsuarioDTO objUsuarioDTO) throws Exception {
 	  
 	  try {
-          Statement sqlStatement = AppConfig.getMyConnection().createStatement();
+          Statement sqlStatement = this.getMyConnection().createStatement();
           String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0";
           //String readRecordSQL = "select * from USUARIO_K78 where ROWNUM < 2 and ROWNUM >0 and LOGIN like '%"+objUsuarioDTO.getLogin()+"%' and CLAVE like '%"+objUsuarioDTO.getPasssha256()+"%'";  
           ResultSet myResultSet = sqlStatement.executeQuery(readRecordSQL);
@@ -48,8 +47,8 @@ public class AppConfig  {
 	
 	  
   }
-@Bean
-public static Connection getMyConnection() throws SQLException {
+
+public Connection getMyConnection() throws SQLException {
 	 ApplicationContext context = new GenericXmlApplicationContext("application-context.xml");
      OracleDataSource dataSource=  (OracleDataSource) context.getBean("dataSource");
    	Connection myConnection = dataSource.getConnection();
