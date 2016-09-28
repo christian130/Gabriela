@@ -1,11 +1,116 @@
 package conexusDTO;
 
-import java.sql.Date;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-import lombok.Data;
-
-@Data 
+@Configuration
 public class PacientesDTO {
+	public PacientesDTO() {
+		super();
+	}
+	 @Bean
+	    public PacientesDTO miBean() {
+	        return new PacientesDTO();
+	    }
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((emailP == null) ? 0 : emailP.hashCode());
+		result = prime * result + ((fechaNacimientoP == null) ? 0 : fechaNacimientoP.hashCode());
+		result = prime * result + idP;
+		result = prime * result + ((nombreP == null) ? 0 : nombreP.hashCode());
+		result = prime * result + ((nroHistoriaP == null) ? 0 : nroHistoriaP.hashCode());
+		result = prime * result + ((telefonoP == null) ? 0 : telefonoP.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PacientesDTO other = (PacientesDTO) obj;
+		if (emailP == null) {
+			if (other.emailP != null)
+				return false;
+		} else if (!emailP.equals(other.emailP))
+			return false;
+		if (fechaNacimientoP == null) {
+			if (other.fechaNacimientoP != null)
+				return false;
+		} else if (!fechaNacimientoP.equals(other.fechaNacimientoP))
+			return false;
+		if (idP != other.idP)
+			return false;
+		if (nombreP == null) {
+			if (other.nombreP != null)
+				return false;
+		} else if (!nombreP.equals(other.nombreP))
+			return false;
+		if (nroHistoriaP == null) {
+			if (other.nroHistoriaP != null)
+				return false;
+		} else if (!nroHistoriaP.equals(other.nroHistoriaP))
+			return false;
+		if (telefonoP == null) {
+			if (other.telefonoP != null)
+				return false;
+		} else if (!telefonoP.equals(other.telefonoP))
+			return false;
+		return true;
+	}
+	@Bean
+	public int getIdP() {
+		return idP;
+	}
+	@Bean
+	public void setIdP(int idP) {
+		this.idP = idP;
+	}
+	@Bean
+	public String getNroHistoriaP() {
+		return nroHistoriaP;
+	}
+	@Bean
+	public void setNroHistoriaP(String nroHistoriaP) {
+		this.nroHistoriaP = nroHistoriaP;
+	}
+	@Bean
+	public String getNombreP() {
+		return nombreP;
+	}
+	@Bean
+	public void setNombreP(String nombreP) {
+		this.nombreP = nombreP;
+	}
+	@Bean
+	public String getTelefonoP() {
+		return telefonoP;
+	}
+	@Bean
+	public void setTelefonoP(String telefonoP) {
+		this.telefonoP = telefonoP;
+	}
+	@Bean
+	public String getEmailP() {
+		return emailP;
+	}
+	@Bean
+	public void setEmailP(String emailP) {
+		this.emailP = emailP;
+	}
+	@Bean
+	public String getFechaNacimientoP() {
+		return fechaNacimientoP;
+	}
+	@Bean
+	public void setFechaNacimientoP(String fechaNacimientoP) {
+		this.fechaNacimientoP = fechaNacimientoP;
+	}
+	
 	private int idP;
 	private String nroHistoriaP;
 	private String nombreP;
