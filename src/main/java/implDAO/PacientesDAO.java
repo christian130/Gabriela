@@ -56,7 +56,7 @@ try {
 			Statement sqlStatement = appconfig.getMyConnection().createStatement();
 			String readRecordSQL = "UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET ESTATUS = '0' WHERE NRO_HISTORIA = '"+pacientesObjDTO.getNroHistoriaP()+"'";
 	          int myResultSet = sqlStatement.executeUpdate(readRecordSQL);	          
-	          if (myResultSet==1){
+	          if (myResultSet>=1){
 	        	  appconfig.getMyConnection().close();
 	        	  return true;	        	  
 	          }else{
