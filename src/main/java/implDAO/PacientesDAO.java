@@ -55,8 +55,29 @@ public class PacientesDAO implements IPacientesDAO {
 
 	@Override
 	public boolean delete(PacientesDTO pacientesObjDTO) {
+try {
+			
+			Statement sqlStatement = appconfig.getMyConnection().createStatement();
+			//INSERT INTO "CITAS_MEDICAS"."PACIENTE_Z24" (ID_PACIENTE_Z24, NRO_HISTORIA, NOMBRE, TELEFONO, EMAIL, FECHA_NACIMIENTO, ESTATUS) VALUES ('1', '01112', 'Garcia Mendez', '1234567', 'ccc@gmail.com', TO_DATE('2016-09-24 22:34:05', 'YYYY-MM-DD HH24:MI:SS'), '1')
+//			UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET ESTATUS = '0' WHERE NRO_HISTORIA = '7777'
+
+			String readRecordSQL = "UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET ESTATUS = '0' WHERE NRO_HISTORIA = '"+pacientesObjDTO.getNroHistoriaP()+"'";
+	          int myResultSet = sqlStatement.executeUpdate(readRecordSQL);	          
+	          if (myResultSet==1){
+	        	  appconfig.getMyConnection().close();
+	        	  return true;	        	  
+	          }else{
+	        	  return false;
+	          }
+	          
+	          
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 		// TODO Auto-generated method stub
-		return false;
+		
 	}
 
 	@Override

@@ -193,7 +193,7 @@
                 <td th:text="${message.emailP}"></td>
                 <td th:text="${message.Edad}"></td>
                 <td class="tdeliminar"><a href="detalle_paciente.html" class="btn btn-primary btn-xs" role="button"><span class="glyphicon glyphicon-search"></span></a></td></td>
-                <td class="tdeliminar text-center"><p data-placement="top" data-toggle="tooltip" th:title="${message.nroHistoriaP}"><button class="btn btn-danger btn-xs" data-title="" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                <td class="tdeliminar text-center"><p data-placement="top" data-toggle="tooltip" th:title="${message.nroHistoriaP}"><button class="btn btn-danger btn-xs" data-title="" data-toggle="modal" data-target="#delete"  th:onclick="'openEntity(\'' + ${message.nroHistoriaP} + '\')'"  ><span class="glyphicon glyphicon-trash"></span></button></p></td>
             </tr>            
            
         </tbody>
@@ -273,7 +273,7 @@
        
       </div>
         <div class="modal-footer ">
-        <a href="https://www.google.co.ve/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"></span> Si</a>
+        <a href="https://www.google.co.ve/" class="btn btn-success" role="button" id="changeMe"><span class="glyphicon glyphicon-ok-sign"></span> Si</a>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </div>
         </div>
@@ -378,6 +378,10 @@
         $('.input-group #search_param').val(param);
     });
 });
+function openEntity(arg){
+$("#changeMe").removeAttr("href");
+$("#changeMe").attr("href","delete?nroHistoria="+arg);
+}
 
     </script>
 

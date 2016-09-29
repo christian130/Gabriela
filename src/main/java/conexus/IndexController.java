@@ -113,4 +113,18 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
     public String getDetallePaciente(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
 		return "detalle_paciente";
 	}
+	@RequestMapping("/delete")
+    public String borrarPaciente(@RequestParam(value="nroHistoria", required=false, defaultValue="user") String numeroHistoria, Model model) {
+		pacientes.setNroHistoriaP(numeroHistoria);
+		//mypacienteDAO
+		if (mypacienteDAO.delete(pacientes)){
+			List<PacientesDTO> ListOfDTO = mypacienteDAO.findByIdUser();
+			model.addAttribute("messages",ListOfDTO); 
+			System.out.println("aplicado borrado logico de paciente con numero de historia: "+ numeroHistoria);
+			return "pacientes";
+		}else{
+			return "login";
+		}
+		//return "pacientes";
+	}
 }
