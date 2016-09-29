@@ -9,5 +9,4 @@ public interface IPacientesDAO {
 	   public boolean update(PacientesDTO pacientesObjDTO);
 	   public List<PacientesDTO> findByIdUser();
 	   public boolean delete(PacientesDTO pacientesObjDTO);
-	
 }

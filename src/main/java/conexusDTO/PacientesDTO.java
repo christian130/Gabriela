@@ -118,7 +118,7 @@ public class PacientesDTO {
 		return Edad;
 	}
 	public void setEdad(String edad) {
-		System.out.println(calculateAge(edad));
+		//System.out.println(calculateAge(edad));
 		this.Edad = calculateAge(edad);
 	}
 
