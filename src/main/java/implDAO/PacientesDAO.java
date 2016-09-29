@@ -43,8 +43,28 @@ public class PacientesDAO implements IPacientesDAO {
 
 	@Override
 	public boolean update(PacientesDTO pacientesObjDTO) {
+		try {
+			Statement sqlStatement = appconfig.getMyConnection().createStatement();
+			//System.out.println("UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET NOMBRE = '"+pacientesObjDTO.getNombreP()+"', TELEFONO = '"+pacientesObjDTO.getTelefonoP()+"', EMAIL = '"+pacientesObjDTO.getEmailP()+"', FECHA_NACIMIENTO = TO_DATE('"+pacientesObjDTO.getFechaNacimientoP()+" 00:00:00', 'YYYY-MM-DD HH24:MI:SS') WHERE  NRO_HISTORIA = '"+pacientesObjDTO.getNroHistoriaP()+"'");
+			String readRecordSQL = "UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET NOMBRE = '"+pacientesObjDTO.getNombreP()+"', TELEFONO = '"+pacientesObjDTO.getTelefonoP()+"', EMAIL = '"+pacientesObjDTO.getEmailP()+"', FECHA_NACIMIENTO = TO_DATE('"+pacientesObjDTO.getFechaNacimientoP()+" 00:00:00', 'YYYY-MM-DD HH24:MI:SS') WHERE  NRO_HISTORIA = '"+pacientesObjDTO.getNroHistoriaP()+"'";
+			System.out.println(readRecordSQL);
+	          int myResultSet = sqlStatement.executeUpdate(readRecordSQL);	          
+	          if (myResultSet==1){
+	        	  appconfig.getMyConnection().close();
+	        	  return true;	        	  
+	          }else{
+	        	  return false;
+	          }
+	          
+	          
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		//UPDATE \"CITAS_MEDICAS\".\"PACIENTE_Z24\" SET NRO_HISTORIA = '"+pacientesObjDTO.+"', NOMBRE = 'Maria Gabriela Vivas Guerra (HIJA)', TELEFONO = '555555555', EMAIL = 'Maria.gabriela.vivas.santiagol@gmail.com', FECHA_NACIMIENTO = TO_DATE('2014-11-28 09:00:00', 'YYYY-MM-DD HH24:MI:SS') WHERE 
 		// TODO Auto-generated method stub
-		return false;
+		
 	}
 
 	

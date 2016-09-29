@@ -57,6 +57,41 @@ public class IndexController {
 			return "crear_paciente";
 		}
     }	
+	
+	
+	
+																		
+																			
+//	email_paciente 	assadasd@gmail.com
+//	fecha_nacimiento 	2014-11-28
+//	nombre_paciente	Maria Gabriela Vivas Guerra
+//	nro_historia 	7777
+//	telefono_paciente	04243498431
+																			
+																		
+	
+	@RequestMapping (value="/actualizarPaciente", method=RequestMethod.POST, 
+		    produces="application/json", consumes="application/x-www-form-urlencoded",params={"nro_historia", "nombre_paciente","telefono_paciente","email_paciente","fecha_nacimiento"})
+		    public String actualizarPaciente(@RequestParam(value="nro_historia", required=false, defaultValue="N/A") 
+		    String nroHistoriaP, @RequestParam(value="nombre_paciente", required=false, defaultValue="N/A") String nombrePaciente,
+		    @RequestParam(value="telefono_paciente", required=false, defaultValue="N/A") String telefonoP,
+		    @RequestParam(value="email_paciente", required=false, defaultValue="N/A") String emailP,
+		    @RequestParam(value="fecha_nacimiento", required=false, defaultValue="N/A") String fechaNacimientoP,
+		    Model model) {
+				pacientes.setNroHistoriaP(nroHistoriaP);
+				pacientes.setEmailP(emailP);
+				pacientes.setTelefonoP(telefonoP);
+				pacientes.setNombreP(nombrePaciente);
+				pacientes.setFechaNacimientoP(fechaNacimientoP);
+				if (mypacienteDAO.update(pacientes)){
+					List<PacientesDTO> ListOfDTO = mypacienteDAO.findByIdUser();
+					model.addAttribute("messages",ListOfDTO); 
+					return "pacientes";	
+				}else{
+					return "detalle_paciente";
+				}
+		    }
+	
 	@RequestMapping("/pacientes")
     public String pacientes(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
 		objUsuarioDTO.setLogin(name.toString());
