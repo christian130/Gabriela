@@ -109,4 +109,8 @@ public String handleLogin(@PathVariable("id") String id, @RequestParam(value="us
 			return "login";
 		}
     }
+	@RequestMapping("/detalle_paciente")
+    public String getDetallePaciente(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
+		return "detalle_paciente";
+	}
 }
