@@ -57,12 +57,8 @@ public class PacientesDAO implements IPacientesDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
 	}
-
-	
-
 	@Override
 	public boolean delete(PacientesDTO pacientesObjDTO) {
 try {
