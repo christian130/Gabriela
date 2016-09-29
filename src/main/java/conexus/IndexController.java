@@ -86,7 +86,18 @@ public class IndexController {
 		return "detalle_paciente";
 	}
 	@RequestMapping("/editar_paciente")
-    public String setEditarPaciente(@RequestParam(value="name", required=false, defaultValue="user") String name, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
+    public String setEditarPaciente(@RequestParam(value="numeroHistoria", required=false, defaultValue="user") String numeroHistoria, @RequestParam(value="pass", required=false, defaultValue="password") String pass, Model model) {
+		pacientes.setNroHistoriaP(numeroHistoria);
+		List<PacientesDTO> ListOfDTO = mypacienteDAO.findByIdUser();
+		 for(PacientesDTO loop : ListOfDTO) {
+			 if (loop.getNroHistoriaP().equalsIgnoreCase(pacientes.getNroHistoriaP())){				 
+				 pacientes.setNombreP(loop.getNombreP());
+				 pacientes.setTelefonoP(loop.getTelefonoP());
+				 pacientes.setEmailP(loop.getEmailP());
+				 pacientes.setFechaNacimientoPacienteFormateado(loop.getFechaNacimientoP());
+			 }             
+         }
+		 model.addAttribute("dtoPacientes",pacientes);
 		return "editar_paciente";
 	}
 	@RequestMapping("/delete")

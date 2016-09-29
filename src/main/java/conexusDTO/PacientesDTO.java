@@ -114,6 +114,7 @@ public class PacientesDTO {
 		this.fechaNacimientoP = fechaNacimientoP;
 	}
 	
+	
 	public int getEdad() {
 		return Edad;
 	}
@@ -129,6 +130,7 @@ public class PacientesDTO {
 	private String emailP;
 	private String fechaNacimientoP;	
 	private int Edad;
+	private String fechaNacimientoPacienteFormateado;
 	//NRO_HISTORIA	VARCHAR2(30 BYTE)
 	//NOMBRE	VARCHAR2(100 BYTE)
 	//TELEFONO	VARCHAR2(50 BYTE)
@@ -143,5 +145,14 @@ public class PacientesDTO {
 		LocalDate now= LocalDate.now();
 		Period p = Period.between(now, today);
 		return  Math.abs(p.getYears());
+	}
+	public String getFechaNacimientoPacienteFormateado() {		
+		return fechaNacimientoPacienteFormateado;
+	}
+	public void setFechaNacimientoPacienteFormateado(String fechaNacimientoPacienteFormateado) {
+		String[] split = fechaNacimientoPacienteFormateado.split("-");
+		String dia=split[2].substring(0, 2);
+		this.fechaNacimientoPacienteFormateado = split[0]+"-"+split[1]+"-"+dia;
+		 
 	}
 }
