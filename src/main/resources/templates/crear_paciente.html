@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -55,6 +55,7 @@
   <script>
     $(function(){
       $( ".date-input-css" ).datepicker({
+      viewMode: 'years',
   dateFormat: "yy-mm-dd"
 });
     })
