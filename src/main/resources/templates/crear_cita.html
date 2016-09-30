@@ -182,12 +182,12 @@ $('.timepicker-input-css').timepicker()
 
   <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
 //<![CDATA[
-        bkLib.onDomLoaded(function() {var myNicEditor = new nicEditor();
+        bkLib.onDomLoaded(function() {
          myNicEditor.setPanel('myNicPanel01'); 
-        nicEditors.allTextAreas() });
+         });
   //]]>
   </script>
-  <textarea class="" name="sintomas" style="width: 100%;" placeholder="">
+  <textarea class="" id="sintomas" name="sintomas" style="width: 100%;" placeholder="">
        
 </textarea><br />
 </div>
@@ -199,11 +199,11 @@ $('.timepicker-input-css').timepicker()
 <div id="sample">
   <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
 //<![CDATA[
-        bkLib.onDomLoaded(function() { var myNicEditor = new nicEditor();
+        bkLib.onDomLoaded(function() { 
          myNicEditor.setPanel('myNicPanel');});
   //]]>
   </script>
-  <textarea class=""  name="diagnostico" style="width: 100%;" placeholder="">
+  <textarea class="" id="diagnostico" name="diagnostico" style="width: 100%;" placeholder="">
        
 </textarea><br />
 </div>
@@ -211,14 +211,15 @@ $('.timepicker-input-css').timepicker()
 <div class="form-group row">
   <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Tratamiento</label>
   <div class="col-xs-10">
-  <div id="myNicPanel" style="width: 525px;"></div> e.g. Acetaminofen,.<br />
+  <div id="myNicPanel02" style="width: 525px;"></div> e.g. Acetaminofen,.<br />
 <div id="sample">
   <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
 //<![CDATA[
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas();
+         myNicEditor.setPanel('myNicPanel02'); });
   //]]>
   </script>
-  <textarea class="" name="tratamiento" style="width: 100%;">
+  <textarea class="" id="tratamiento" name="tratamiento" style="width: 100%;">
        
 </textarea><br />
 </div>
@@ -355,7 +356,10 @@ $('.timepicker-input-css').timepicker()
       collapsible: true
     });
     $("#sendMe").bind("click",function(){
-    $("#myForm01").submit();
+    nicEditors.findEditor('sintomas').saveContent();
+nicEditors.findEditor('diagnostico').saveContent();
+nicEditors.findEditor('tratamiento').saveContent();
+$("#myForm01").submit();
     });
     
   } );
