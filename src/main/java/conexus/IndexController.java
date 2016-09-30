@@ -34,6 +34,25 @@ public class IndexController {
     public String citas(Model model) {        
         return "citas";
     }
+	@RequestMapping("/detalle_citas")
+    public String detalleCitas(Model model) {        
+        return "detalle_citas";
+    }
+	@RequestMapping("/crear_cita")
+    public String viewCitas(@RequestParam(value="numeroHistoria", required=false, defaultValue="user") String numeroHistoriaP,Model model) {
+		pacientes.setNroHistoriaP(numeroHistoriaP);
+		List<PacientesDTO> ListOfDTO = mypacienteDAO.findByIdUser();
+		 for(PacientesDTO loop : ListOfDTO) {
+			 if (loop.getNroHistoriaP().equalsIgnoreCase(pacientes.getNroHistoriaP())){				 
+				 pacientes.setNombreP(loop.getNombreP());
+				 pacientes.setTelefonoP(loop.getTelefonoP());
+				 pacientes.setEmailP(loop.getEmailP());
+				 pacientes.setFechaNacimientoPacienteFormateado(loop.getFechaNacimientoP());
+			 }             
+         }
+		 model.addAttribute("dtoPacientes",pacientes);
+        return "crear_cita";
+    }
 	@RequestMapping(value={"/crear_paciente","/crear_paciente_mensaje"})
     public String irAPaciente(Model model) {
         return "crear_paciente";
@@ -56,19 +75,7 @@ public class IndexController {
 		}else{
 			return "crear_paciente";
 		}
-    }	
-	
-	
-	
-																		
-																			
-//	email_paciente 	assadasd@gmail.com
-//	fecha_nacimiento 	2014-11-28
-//	nombre_paciente	Maria Gabriela Vivas Guerra
-//	nro_historia 	7777
-//	telefono_paciente	04243498431
-																			
-																		
+    }																	
 	
 	@RequestMapping (value="/actualizarPaciente", method=RequestMethod.POST, 
 		    produces="application/json", consumes="application/x-www-form-urlencoded",params={"nro_historia", "nombre_paciente","telefono_paciente","email_paciente","fecha_nacimiento"})
