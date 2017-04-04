@@ -1,16 +1,15 @@
 package implDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import conexusDTO.UsuarioDTO;
 import iDAO.IUsuarioDAO;
-
+@Component
 public class UsuarioDAO implements IUsuarioDAO{
-	
-	@Autowired	
+	@Autowired
 	AppConfig configuracionInicial;
-	
+		
 	@Override
 	public boolean save(UsuarioDTO objUsuarioDTO) {
 		// TODO Auto-generated method stub
@@ -27,12 +26,17 @@ public class UsuarioDAO implements IUsuarioDAO{
 	public boolean findByIdUser(UsuarioDTO objUsuarioDTO) {
 		
 				try {
+					
+					
 			if (configuracionInicial.getLogin(objUsuarioDTO)){
+				System.out.println("caigo aqui");
 				return true;
 			}else{
+				System.out.println("entonces caigo aqui");
 				return false;
 			}
 		} catch (Exception e) {
+			System.out.println("no way... i'm here");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;

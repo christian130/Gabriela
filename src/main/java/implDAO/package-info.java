@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author Christian
+ * @author Christian Vivas Santiago
  *
  */
 package implDAO;
