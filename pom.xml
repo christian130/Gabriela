@@ -46,7 +46,7 @@
          <artifactId>ojdbc6</artifactId>
          <scope>system</scope>
          <version>1.0</version>
-         <systemPath>${basedir}\src\main\resources\ojdbc6.jar</systemPath>
+         <systemPath>${basedir}/src/main/resources/ojdbc6.jar</systemPath>
   </dependency>
 		
 		<dependency>
