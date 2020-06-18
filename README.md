@@ -28,6 +28,6 @@ password: 123456
 ```
 luego a esto al caer en login.html (el responsive no funciona), ingresar 
 ```
-en el usuario admin
-y en el password 12345
+admin
+12345
 ```
