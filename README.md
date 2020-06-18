@@ -19,12 +19,15 @@ mvn spring-boot:run
 
 ```
 ir a la siguiente direccion e ingresar el usuario y contraseña suministrados aqui (esto es obra de spring security)
+http://localhost:12000
 ```
-#!java
-localhost:12000
+luego
 ```
-
-```
-#!java
 usuario: user
 password: 123456
+```
+luego a esto al caer en login.html (el responsive no funciona), ingresar 
+```
+en el usuario admin
+y en el password 12345
+```
