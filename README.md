@@ -1,7 +1,6 @@
 IMPORTANTE, NO COMPILA EL CODIGO! TAMBIEN SE TIENE QUE INSTALAR UNA BASE DE DATOS ORACLE LA CUAL NO ESTA DISPONIBLE
 para que compile por favor, clonar este repositorio y luego ejecutar
 ```
-#!java
 git clone https://github.com/christian130/Gabriela.git
 git branch https://github.com/christian130/Gabriela/blob/branch-estable/
 mvn -Dmaven.test.skip=true clean install
