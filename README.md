@@ -2,7 +2,7 @@ IMPORTANTE, NO COMPILA EL CODIGO! TAMBIEN SE TIENE QUE INSTALAR UNA BASE DE DATO
 para que compile por favor, clonar este repositorio y luego ejecutar
 ```
 git clone https://github.com/christian130/Gabriela.git
-git branch https://github.com/christian130/Gabriela/blob/branch-estable/
+git branch branch-estable
 mvn -Dmaven.test.skip=true clean install
 mvn spring-boot:run
 ```
