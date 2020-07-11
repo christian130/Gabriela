@@ -1,222 +1,96 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8"></meta>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="author" content=""></meta>
- 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ></meta>
-    <title>Health Plus</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet"></link>
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'></link>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'></link>
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"></link>
-    <!-- Mi CSS --> 
-    <link href="css/creative.css" rel="stylesheet"></link>
-    <link rel="stylesheet" type="text/css" href="css/set2.css" ></link>
-    <link rel="stylesheet" href="css/style.css" ></link>
-	<link rel="stylesheet" href="css/animate.css"></link>
-        <!--datapicker-->
-    <link rel="stylesheet" type="text/css" media="screen"
-     href="css/bootstrap-datetimepicker.css" ></link>
-    <script src="js/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
-    <script type='text/javascript' src='js/demo.js'></script>
-    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Gabriela ERP demo</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+
 </head>
-<body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top colortope">
-        <div class="container-fluid">
-            <!-- toggle para mobile -->
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll logo" href="#page-top"><img src="img/logomedical.png"></a>
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
+                  </div>
+                  <form class="user">
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">No cerrar sesión</label>
+                      </div>
+                    </div>
+                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                      Login
+                    </a>
+                    <hr>
+                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                      <i class="fab fa-google fa-fw"></i> Login with Google
+                    </a>
+                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                    </a>
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot-password.html">Olvido de Password?</a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="register.html">Crear Cuenta!</a>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            
+          </div>
         </div>
-    </nav>
 
-   
-
-   <div id="particles">
-</div>
-
-
-           
-  <!-- Formulario -->
-
-<div class="login-page">
-  <div class="form">
-    <form class="login-form">
-   <span class="input input--nao">
-          <input class="input__field input__field--nao" type="text" id="input-1" />
-          <label class="input__label input__label--nao" for="input-1">
-            <span class="input__label-content input__label-content--nao">Usuario</span>
-          </label>
-          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-          </svg>
-        </span>
-         <form class="login-form">
-     <span class="input input--nao">
-          <input class="input__field input__field--nao" type="text" id="input-2" />
-          <label class="input__label input__label--nao" for="input-1">
-            <span class="input__label-content input__label-content--nao">Clave</span>
-          </label>
-          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-          </svg>
-        </span>
-      <a class="btn btn-info" href="#" role="button" id="button001">Entrar</a>
-      <p class="message"><a href="restablecer_contrasena.html">Olvido su contraseña?</a></p>
-    </form>
-  </div>
-</div>
-<script>
-
-</script>
-<!-- Footer -->
-    
-
-    <!--Modal servicios-->
-<div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
-      <div class="modal-body"><div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
 
-  <!-- Table -->
-  <table class="table"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>
-</div>
-      </div>
-      <div class="modal-footer">
-      </div>
     </div>
+
   </div>
-</div>
-<!--Modal alert-->
 
- <div class="modal fade" id="myModaldos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <div class="alert alert-success" role="alert">Su solicitud ha sido enviada satisfactoriamente!</div>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-    $('.carousel').carousel({
-        interval: 3000
-    })
-</script>
- <script>
-  $( function() {
-    $( "#accordion" ).accordion({
-      active: false,
-      collapsible: true
-    });
-  } );
-  jQuery(document).ready(function(){
-$("#button001").bind("click",function(){
-logmein();
-})
-
-
-});
-
-function logmein(){
-if ($("#input-1").val()=='admin' && $("#input-2").val()=='12345'){
-document.location.href="pacientes.html"
-}else{
-document.location.href="login.html"
-}
-}
-  </script>
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
-    <!-- datapicker -->
-      <script src="js/jquery-1.12.4.min.js"integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
-    <script type="text/javascript"
-     src="js/moment-with-locales.js">
-    </script> 
-    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-   
-  <script src="js/jquery-ui.js"></script>
-
-
-     <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker').datetimepicker();
-            });
-        </script>
-   <script src="js/classie.js"></script>
-    <script>
-      (function() {
-        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-        if (!String.prototype.trim) {
-          (function() {
-            // Make sure we trim BOM and NBSP
-            var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-            String.prototype.trim = function() {
-              return this.replace(rtrim, '');
-            };
-          })();
-        }
-
-        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-          // in case the input is already filled..
-          if( inputEl.value.trim() !== '' ) {
-            classie.add( inputEl.parentNode, 'input--filled' );
-          }
-
-          // events:
-          inputEl.addEventListener( 'focus', onInputFocus );
-          inputEl.addEventListener( 'blur', onInputBlur );
-        } );
-
-        function onInputFocus( ev ) {
-          classie.add( ev.target.parentNode, 'input--filled' );
-        }
-
-        function onInputBlur( ev ) {
-          if( ev.target.value.trim() === '' ) {
-            classie.remove( ev.target.parentNode, 'input--filled' );
-          }
-        }
-      })();
-    </script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
 </body>
 
