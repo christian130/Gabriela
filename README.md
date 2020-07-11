@@ -5,4 +5,4 @@ https://github.com/christian130/Gabriela/tree/branch-estable
 
 y siga los pasos que alli dicen
 
-la aplicacion necesita una completa reescritura de codigo
+la aplicacion necesita reescribirse desde cero
