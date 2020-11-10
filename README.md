@@ -1,3 +1,19 @@
+English
+=====
+If you want to see in-action or a video of this software you can go to https://drive.google.com/file/d/0B0CMYtyUcMLPT2FEQ1VaajhBNDA/view?usp=sharing
+
+In order to run this code you should follow the steps bellow
+
+Spanish
+=====
+Si quieres ver una demostracion del despliegue de este software en este branch en particular, por favor ve a este link https://drive.google.com/file/d/0B0CMYtyUcMLPT2FEQ1VaajhBNDA/view?usp=sharing
+si deseas levantar este software debes clonar este repositorio y entrar en esta rama y lanzar los comandos desde esta rama
+
+```
+git clone https://github.com/christian130/Gabriela.git
+sh getBranches.sh
+git checkout branch-estable
+```
 
 ```
 mvn -Dmaven.test.skip=true clean install
